@@ -75,7 +75,7 @@ describe('AppFunctional', () => {
     submit = await screen.getByRole('button', { name: "Submit" });
     await user.click(submit);
   
-    expect(await screen.findByText(/Ouch:/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Ouch: email is required/i)).toBeInTheDocument();
   });
 
  })
