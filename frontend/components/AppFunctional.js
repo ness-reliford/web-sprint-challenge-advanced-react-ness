@@ -128,6 +128,14 @@ export default function AppFunctional(props) {
       email: state.Email
     }
 
+    if (!state.Email) {
+      setState(prevState => ({
+        ...prevState,
+        Message: "Ouch: email is required"
+      }));
+      return;
+    }
+
     axios.post(URL, payload)
     .then(response => {
       setState(prevState => ({
